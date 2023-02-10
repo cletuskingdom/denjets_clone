@@ -1,5 +1,5 @@
 import FormButtons from "../components/FormButtons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import validator from "validator";
 
@@ -12,6 +12,7 @@ const Register = () => {
 		last_name: "",
 		email: "",
 	});
+	const navigate = useNavigate();
 
 	const handleLogin = (event) => {
 		event.preventDefault();
@@ -19,7 +20,7 @@ const Register = () => {
 		const last_name = state.last_name;
 		const email = state.email;
 
-		if (first_name === "" || last_name === "" || email === "") {
+		if (first_name === "" && last_name === "" && email === "") {
 			alert("You have not completed some field.");
 			return;
 		} else if (!validator.isEmail(email)) {
@@ -27,7 +28,7 @@ const Register = () => {
 			return;
 		} else {
 			alert("Thank you '" + first_name + "'");
-			this.props.push("/src/pages/Success");
+			navigate("/success");
 			// redirect to the success page
 			// console.log("submitting", state);
 		}
