@@ -27,7 +27,7 @@ const Register = () => {
 			return;
 		} else {
 			alert("Thank you '" + first_name + "'");
-			window.location = "/success";
+			this.props.push("/src/pages/Success");
 			// redirect to the success page
 			// console.log("submitting", state);
 		}
