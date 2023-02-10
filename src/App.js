@@ -1,79 +1,24 @@
-import { useState } from "react";
 import "./App.css";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 const App = () => {
-	const logo_1 =
+	const img_url =
 		"https://denjets.netlify.app/static/media/denjets.6ef74d44.png";
 
-	const [state, setState] = useState({ username: "", age: null });
-	const handleLogin = (event) => {
-		event.preventDefault();
-		const age = state.age;
-		const username = state.username;
-
-		if (age === "" && username === "") {
-			alert("You have not filled some field");
-			return;
-		} else if (!Number(age)) {
-			alert("Your age must be a number");
-			return;
-		} else {
-			alert("Your age: " + age + ", and your age is: " + username);
-			// console.log("submitting", state);
-		}
-	};
-
-	const handleChange = (event) => {
-		const name = event.target.name;
-		const value = event.target.value;
-		setState({ ...state, [name]: value });
-	};
-
 	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo_1} className="logo" alt="logo" />
-			</header>
-
-			<section>
-				<div className="container py-5">
-					<form onSubmit={handleLogin}>
-						<div className="mb-3">
-							<label>
-								Email:
-								<input
-									type="email"
-									className="form-control"
-									placeholder="michealf@gmail.com"
-									name="username"
-									onChange={handleChange}
-								/>
-							</label>
-						</div>
-
-						<div className="mb-3">
-							<label>
-								Age:
-								<input
-									type="text"
-									className="form-control"
-									placeholder="25"
-									name="age"
-									onChange={handleChange}
-								/>
-							</label>
-						</div>
-
-						<button
-							className="btn btn-dark px-5 btn-sm"
-							type="submit"
-						>
-							LOGIN
-						</button>
-					</form>
-				</div>
-			</section>
-		</div>
+		<section className="App py-5">
+			<div className="container">
+				<img src={img_url} alt="Logo" className="img-fluid" />
+				<p> New Travel Experience Coming Soon... </p>
+				<a
+					className="btn btn-dark btn_b rounded-pill py-2 px-4"
+					href="/signup"
+				>
+					Sign Up for Updates
+				</a>
+				<Link to="/register"></Link>
+			</div>
+		</section>
 	);
 };
 
