@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./App.css";
+import { Link } from "react-router-dom";
 
 const Login = () => {
 	const logo_1 =
@@ -31,11 +31,20 @@ const Login = () => {
 
 	return (
 		<div className="App">
-			<header className="App-header">
-				<img src={logo_1} className="logo" alt="logo" />
-			</header>
+			<div className="text-center">
+				<Link to="/">
+					<img
+						src={logo_1}
+						alt="Logo"
+						className="img-fluid register_logo"
+					/>
+				</Link>
+				<h4 className="pt-2 pb-4">LOGIN</h4>
 
-			<section>
+				<p className="tnx"> Coming Soon... </p>
+			</div>
+
+			<section className="d-none">
 				<div className="container py-5">
 					<form onSubmit={handleLogin}>
 						<div className="mb-3">

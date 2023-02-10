@@ -1,24 +1,18 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import Success from "./pages/Success";
 
 const App = () => {
-	const img_url =
-		"https://denjets.netlify.app/static/media/denjets.6ef74d44.png";
-
 	return (
-		<section className="App py-5">
-			<div className="container">
-				<img src={img_url} alt="Logo" className="img-fluid" />
-				<p> New Travel Experience Coming Soon... </p>
-				<a
-					className="btn btn-dark btn_b rounded-pill py-2 px-4"
-					href="/signup"
-				>
-					Sign Up for Updates
-				</a>
-				<Link to="/register"></Link>
-			</div>
-		</section>
+		<Routes>
+			<Route exact path="/" element={<Home />} />
+			<Route exact path="/register" element={<Register />} />
+			<Route exact path="/login" element={<Login />} />
+			<Route exact path="/success" element={<Success />} />
+		</Routes>
 	);
 };
 

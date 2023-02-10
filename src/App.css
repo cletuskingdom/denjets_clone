@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
   background-color: #F1F2EA;
   min-height: 100vh;
   display: flex;
@@ -16,6 +16,11 @@
   margin-bottom: 20px;
 }
 
+.register_logo{
+  width: 20%;
+  margin-bottom: 20px;
+}
+
 .btn_b{
   border: none;
   background-image: linear-gradient(160deg,#025cca,#80d0c7) !important;
@@ -27,14 +32,26 @@
   pointer-events: none;
 }
 
+.labels{
+  font-size: medium;
+  color: #322929;
+}
+
+@media (min-width: 768px){
+  .tnx{
+    font-size: 80px;
+  }
+}
+
+.app-link {
+  color: #5E5C5D;
+  font-size: small;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
